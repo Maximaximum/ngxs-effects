@@ -9,7 +9,7 @@ export function Effect<EClassType, ArgsType, ReturnType, ActionObject>(
     return (
         target: EClassType,
         propertyName: string,
-        descriptor: TypedPropertyDescriptor<(args: ActionObject) => ReturnType>
+        descriptor: TypedPropertyDescriptor<(args?: ActionObject) => ReturnType>
     ): void => {
         actions.forEach(action => {
             const metadata: EffectMetadataInterface<ArgsType, ActionObject> = {
